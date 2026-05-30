@@ -40,3 +40,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# strategy / context docs — kept local only, never in git
+PROJECT_PLAN.md
+CLAUDE.md
