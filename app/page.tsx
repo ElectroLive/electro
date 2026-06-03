@@ -1,4 +1,4 @@
-import { Zap, ShieldCheck } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
 import { WaitlistForm } from "@/components/waitlist-form";
 
 const steps = [
@@ -19,29 +19,47 @@ const steps = [
 export default function Home() {
   return (
     <div className="relative flex flex-1 flex-col overflow-hidden">
+      {/* Brand glow — electric-blue → teal, soft, behind everything */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-x-0 -top-40 -z-10 flex justify-center"
       >
-        <div className="h-[28rem] w-[28rem] rounded-full bg-gradient-to-tr from-violet-500/30 to-fuchsia-500/30 blur-3xl" />
+        <div
+          className="h-[32rem] w-[32rem] rounded-full opacity-25 blur-3xl"
+          style={{
+            backgroundImage: "linear-gradient(110deg, #2F6BFF, #21E6C1)",
+          }}
+        />
       </div>
 
       <header className="mx-auto flex w-full max-w-5xl items-center justify-between px-6 py-5">
-        <span className="inline-flex items-center gap-2 text-lg font-semibold tracking-tight">
-          <Zap className="size-5 text-violet-600" aria-hidden />
-          Electro
+        <span className="inline-flex items-center gap-2.5 text-lg font-semibold tracking-tight">
+          {/* App-icon tile (Midnight preset: Ink tile + Snow E) per brand README */}
+          <span className="flex h-9 w-9 items-center justify-center rounded-[22%] bg-electro-ink shadow-[0_8px_24px_rgba(0,0,0,0.35)] ring-1 ring-white/10">
+            <span
+              aria-hidden
+              className="electro-mark electro-e text-electro-snow"
+              style={{ width: 14, height: 18 }}
+            />
+          </span>
+          <span>Electro</span>
         </span>
         <span className="text-sm text-muted-foreground">Spotify ↔ Apple Music</span>
       </header>
 
       <main className="mx-auto flex w-full max-w-2xl flex-1 flex-col items-center px-6 pb-20 pt-10 text-center sm:pt-16">
-        <span className="mb-5 inline-flex items-center rounded-full border px-3 py-1 text-xs font-medium text-muted-foreground">
+        <span className="mb-5 inline-flex items-center rounded-full border border-white/10 bg-white/[0.02] px-3 py-1 text-xs font-medium text-muted-foreground">
           Early access — launching soon
         </span>
 
-        <h1 className="text-balance text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
+        <h1 className="text-balance text-4xl font-semibold leading-[1.1] tracking-tight sm:text-5xl">
           Move your playlists between Spotify and Apple Music in{" "}
-          <span className="bg-gradient-to-r from-violet-600 to-fuchsia-600 bg-clip-text text-transparent">
+          <span
+            className="bg-clip-text text-transparent"
+            style={{
+              backgroundImage: "linear-gradient(110deg, #2F6BFF, #21E6C1)",
+            }}
+          >
             30 seconds
           </span>
           .
@@ -66,8 +84,11 @@ export default function Home() {
           </h2>
           <ol className="grid gap-4 text-left sm:grid-cols-3">
             {steps.map((step, i) => (
-              <li key={step.title} className="rounded-xl border bg-card/50 p-5">
-                <span className="flex size-8 items-center justify-center rounded-full bg-violet-600/10 text-sm font-semibold text-violet-700 dark:text-violet-300">
+              <li
+                key={step.title}
+                className="rounded-xl border border-white/[0.08] bg-card p-5"
+              >
+                <span className="flex size-8 items-center justify-center rounded-full bg-electro-blue/15 text-sm font-semibold text-electro-blue">
                   {i + 1}
                 </span>
                 <h3 className="mt-3 font-medium">{step.title}</h3>

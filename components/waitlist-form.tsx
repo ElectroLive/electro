@@ -51,7 +51,7 @@ export function WaitlistForm() {
     return (
       <div
         role="status"
-        className="flex items-center justify-center gap-2 rounded-lg border border-violet-200 bg-violet-50 px-4 py-3 text-sm font-medium text-violet-800 dark:border-violet-900 dark:bg-violet-950/40 dark:text-violet-200"
+        className="flex items-center justify-center gap-2 rounded-lg border border-electro-teal/30 bg-electro-teal/10 px-4 py-3 text-sm font-medium text-electro-teal"
       >
         <Check className="size-4 shrink-0" aria-hidden />
         {message}

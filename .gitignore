@@ -44,3 +44,6 @@ next-env.d.ts
 # strategy / context docs — kept local only, never in git
 PROJECT_PLAN.md
 CLAUDE.md
+
+# brand-kit handoff source — extracted assets get copied into public/ and globals.css; staging itself not committed
+brand-kit-staging/
