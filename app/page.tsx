@@ -33,17 +33,12 @@ export default function Home() {
       </div>
 
       <header className="mx-auto flex w-full max-w-5xl items-center justify-between px-6 py-5">
-        <span className="inline-flex items-center gap-2.5 text-lg font-semibold tracking-tight">
-          {/* App-icon tile (Midnight preset: Ink tile + Snow E) per brand README */}
-          <span className="flex h-9 w-9 items-center justify-center rounded-[22%] bg-electro-ink shadow-[0_8px_24px_rgba(0,0,0,0.35)] ring-1 ring-white/10">
-            <span
-              aria-hidden
-              className="electro-mark electro-e text-electro-snow"
-              style={{ width: 14, height: 18 }}
-            />
-          </span>
-          <span>Electro</span>
-        </span>
+        {/* Wordmark SVG (recolored via CSS mask per brand README; tagline is part of the artwork — do not separate) */}
+        <span
+          role="img"
+          aria-label="Electro"
+          className="electro-mark electro-wordmark inline-block h-8 text-electro-snow"
+        />
         <span className="text-sm text-muted-foreground">Spotify ↔ Apple Music</span>
       </header>
 
