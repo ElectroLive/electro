@@ -56,14 +56,14 @@ export default function Home() {
       </header>
 
       <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col px-6 pb-16">
-        {/* Editorial hero — heavy uppercase headline, oversized, with brand-gradient highlight */}
-        <section className="pt-8 sm:pt-14">
+        {/* Editorial hero — centered: tag, headline, subcopy, form all stacked. */}
+        <section className="pt-8 text-center sm:pt-14">
           <span className="inline-flex items-center text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
             <span className="mr-3 inline-block size-1.5 rounded-full bg-electro-blue" />
             Early access — launching soon
           </span>
 
-          <h1 className="mt-6 font-display text-balance text-3xl font-black uppercase leading-[0.95] tracking-tight sm:text-4xl md:text-5xl lg:text-5xl">
+          <h1 className="mx-auto mt-6 max-w-4xl font-display text-balance text-3xl font-black uppercase leading-[0.95] tracking-tight sm:text-4xl md:text-5xl lg:text-5xl">
             Move your playlists between Spotify and Apple Music in{" "}
             <span
               className="bg-clip-text text-transparent"
@@ -74,19 +74,17 @@ export default function Home() {
             .
           </h1>
 
-          <div className="mt-10 grid gap-10 md:grid-cols-12">
-            <p className="max-w-xl text-pretty text-base leading-relaxed text-muted-foreground md:col-span-7 md:text-lg">
-              Switching services shouldn&apos;t mean losing your music. Electro matches every
-              track — accurately — and moves whole playlists in one tap. No signup, and your
-              first transfer is free.
-            </p>
+          <p className="mx-auto mt-8 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
+            Switching services shouldn&apos;t mean losing your music. Electro matches every
+            track — accurately — and moves whole playlists in one tap. No signup, and your
+            first transfer is free.
+          </p>
 
-            <div className="md:col-span-5">
-              <WaitlistForm />
-              <p className="mt-3 text-xs text-muted-foreground">
-                No spam — just one email when we launch.
-              </p>
-            </div>
+          <div className="mx-auto mt-8 w-full max-w-md">
+            <WaitlistForm />
+            <p className="mt-3 text-xs text-muted-foreground">
+              No spam — just one email when we launch.
+            </p>
           </div>
         </section>
 
