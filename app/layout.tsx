@@ -1,18 +1,20 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Wallpoet } from "next/font/google";
+import { Inter, Archivo } from "next/font/google";
 import "./globals.css";
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
+// UI/body — Inter as a free stand-in for Neue Haas Grotesk (Karim's secondary)
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
-const wallpoet = Wallpoet({
-  variable: "--font-wallpoet",
+// Display/headlines — Archivo Black as a free stand-in for Titling Gothic Pro
+// (Karim's primary "blocky, strong, bold" display face). Weight 900 = Archivo Black.
+const archivo = Archivo({
+  variable: "--font-archivo",
   subsets: ["latin"],
-  weight: "400",
+  weight: ["400", "700", "900"],
   display: "swap",
 });
 
@@ -35,7 +37,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${spaceGrotesk.variable} ${wallpoet.variable} h-full antialiased`}
+      className={`${inter.variable} ${archivo.variable} h-full antialiased`}
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />

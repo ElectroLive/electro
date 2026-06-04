@@ -55,7 +55,7 @@ export default function Home() {
             Early access — launching soon
           </span>
 
-          <h1 className="mt-6 text-balance text-5xl font-bold uppercase leading-[0.92] tracking-tight sm:text-6xl md:text-7xl lg:text-[5.5rem]">
+          <h1 className="mt-6 font-display text-balance text-5xl font-black uppercase leading-[0.92] tracking-tight sm:text-6xl md:text-7xl lg:text-[5.5rem]">
             Move your playlists between Spotify and Apple Music in{" "}
             <span
               className="bg-clip-text text-transparent"
@@ -115,7 +115,7 @@ export default function Home() {
                     {step.n}
                   </span>
 
-                  <h3 className="mt-4 text-3xl font-bold uppercase leading-none tracking-tight transition-transform duration-500 group-hover:-translate-y-0.5 sm:text-4xl">
+                  <h3 className="mt-4 font-display text-3xl font-black uppercase leading-none tracking-tight transition-transform duration-500 group-hover:-translate-y-0.5 sm:text-4xl">
                     {step.title}
                   </h3>
 
