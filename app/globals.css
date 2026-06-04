@@ -7,10 +7,15 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-space-grotesk);
-  --font-mono: var(--font-space-grotesk);
-  --font-display: var(--font-space-grotesk);
-  --font-heading: var(--font-space-grotesk);
+  /* System-font stack — on Apple devices this resolves to San Francisco. */
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro", system-ui,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono:
+    ui-monospace, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono",
+    monospace;
+  --font-display: var(--font-sans);
+  --font-heading: var(--font-sans);
 
   /* ---- ELECTRO brand colors (per electro-tokens.css) ---- */
   --color-electro-ink: #0b0b0c;

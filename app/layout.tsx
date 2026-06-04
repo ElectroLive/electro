@@ -1,16 +1,11 @@
 import type { Metadata } from "next";
-import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
-// Only font in use — Space Grotesk per the ELECTRO brand kit. Geometric/technical
-// character that complements the stencil ELECTRO wordmark. Used for body, UI,
-// hero, and tile titles alike — single cohesive type system.
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  display: "swap",
-});
+// No webfont import — using the OS system font stack (apple.com's approach).
+// On Apple devices `-apple-system` resolves to San Francisco (Apple's own UI
+// font). On Windows it falls back to Segoe UI; on Android to Roboto; on
+// Linux to the system default. Stack is configured in globals.css under
+// the `--font-sans` token.
 
 export const metadata: Metadata = {
   title: "Electro — Move playlists between Spotify & Apple Music",
@@ -32,7 +27,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${spaceGrotesk.variable} h-full antialiased`}
+      className="h-full antialiased"
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
