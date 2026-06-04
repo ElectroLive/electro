@@ -65,7 +65,7 @@ export default function Home() {
         <span
           role="img"
           aria-label="Electro"
-          className="electro-mark electro-wordmark inline-block h-5 text-electro-ink dark:text-electro-snow"
+          className="electro-mark electro-wordmark inline-block h-4 text-electro-ink dark:text-electro-snow"
         />
         <div className="flex items-center gap-3 sm:gap-5">
           <span className="hidden text-[11px] uppercase tracking-[0.22em] text-muted-foreground sm:inline">
