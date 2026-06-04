@@ -157,4 +157,42 @@
     --electro-mask-src: url('/electro-E.svg');
     aspect-ratio: 41 / 52;
   }
+
+  /* Laser-sweep shimmer for text — adapts the brand "Shimmer" spec
+     (originally for the SVG-masked logo) onto text via background-clip:text.
+     Gradient holds the brand blue→teal with a sharp white highlight band that
+     sweeps across; keyframes hold position briefly then sweep fast for a
+     periodic "laser" flash rather than a continuous shimmer. */
+  .electro-laser-text {
+    background-image: linear-gradient(
+      110deg,
+      #2f6bff 0%,
+      #2f6bff 40%,
+      rgba(255, 255, 255, 0.6) 47%,
+      #ffffff 50%,
+      rgba(255, 255, 255, 0.6) 53%,
+      #21e6c1 60%,
+      #21e6c1 100%
+    );
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+            background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: electro-laser 3s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  }
+  @keyframes electro-laser {
+    0%, 65% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -100% 0;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .electro-laser-text {
+      animation: none;
+      background-position: 50% 0;
+    }
+  }
 }

@@ -65,13 +65,7 @@ export default function Home() {
 
           <h1 className="mx-auto mt-6 max-w-4xl font-display text-balance text-3xl font-black uppercase leading-[0.95] tracking-tight sm:text-4xl md:text-5xl lg:text-5xl">
             Move your playlists between Spotify and Apple Music in{" "}
-            <span
-              className="bg-clip-text text-transparent"
-              style={{ backgroundImage: "linear-gradient(110deg, #2F6BFF, #21E6C1)" }}
-            >
-              30 seconds
-            </span>
-            .
+            <span className="electro-laser-text">30 seconds</span>.
           </h1>
 
           <p className="mx-auto mt-8 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
