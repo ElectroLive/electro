@@ -1,7 +1,12 @@
 import { ShieldCheck, ArrowUpRight } from "lucide-react";
+import { SoundOnHover } from "@/components/sound-on-hover";
 import { SoundTile } from "@/components/sound-tile";
+import { SoundToggle } from "@/components/sound-toggle";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { WaitlistForm } from "@/components/waitlist-form";
+
+/** Hero chord: C5 + E5 + G5 = C major triad, played together on headline hover. */
+const HERO_CHORD = [523.25, 659.25, 783.99];
 
 // Per-tile palette (Electro brand kit accents). Pale dark default, brand color
 // revealed on hover. Card text color flips to `fg` on hover for contrast.
@@ -49,6 +54,7 @@ export default function Home() {
           <span className="hidden text-[11px] uppercase tracking-[0.22em] text-muted-foreground sm:inline">
             Spotify ↔ Apple Music
           </span>
+          <SoundToggle />
           <ThemeToggle />
         </div>
       </header>
@@ -61,16 +67,18 @@ export default function Home() {
             Early access — launching soon
           </span>
 
-          <h1 className="mt-6 font-display text-balance text-5xl font-black uppercase leading-[0.92] tracking-tight sm:text-6xl md:text-7xl lg:text-[5.5rem]">
-            Move your playlists between Spotify and Apple Music in{" "}
-            <span
-              className="bg-clip-text text-transparent"
-              style={{ backgroundImage: "linear-gradient(110deg, #2F6BFF, #21E6C1)" }}
-            >
-              30 seconds
-            </span>
-            .
-          </h1>
+          <SoundOnHover frequencies={HERO_CHORD} duration={0.9}>
+            <h1 className="mt-6 font-display text-balance text-5xl font-black uppercase leading-[0.92] tracking-tight sm:text-6xl md:text-7xl lg:text-[5.5rem]">
+              Move your playlists between Spotify and Apple Music in{" "}
+              <span
+                className="bg-clip-text text-transparent"
+                style={{ backgroundImage: "linear-gradient(110deg, #2F6BFF, #21E6C1)" }}
+              >
+                30 seconds
+              </span>
+              .
+            </h1>
+          </SoundOnHover>
 
           <div className="mt-10 grid gap-10 md:grid-cols-12">
             <p className="max-w-xl text-pretty text-base leading-relaxed text-muted-foreground md:col-span-7 md:text-lg">
