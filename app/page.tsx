@@ -4,8 +4,9 @@ import { SoundToggle } from "@/components/sound-toggle";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { WaitlistForm } from "@/components/waitlist-form";
 
-// Per-tile palette (Electro brand kit accents). Pale dark default, brand color
-// revealed on hover. Card text color flips to `fg` on hover for contrast.
+// Per-tile palette — three blue tones that echo the plasma background
+// (deep → mid → bright). Tiles reveal the solid version of those same blues
+// on hover so the page reads as one cohesive blue system.
 // `note` is the Hz to synthesize on hover — ascending C major triad so hovering
 // CONNECT → MATCH → TRANSFER plays C–E–G.
 const steps = [
@@ -13,7 +14,7 @@ const steps = [
     n: "01",
     title: "Connect",
     body: "Securely link Spotify and Apple Music. No new account, no password — just a one-tap sign-in.",
-    bg: "#2F6BFF", // Electric Blue
+    bg: "#1E40AF", // Deep saturated blue (echoes plasma deep tone)
     fg: "#FFFFFF",
     note: 523.25, // C5
   },
@@ -21,16 +22,16 @@ const steps = [
     n: "02",
     title: "Match",
     body: "We match every track by ISRC and smart fuzzy search — even remasters, live takes and features.",
-    bg: "#CBF24A", // Lime
-    fg: "#0B0B0C",
+    bg: "#2F6BFF", // Electric Blue (brand, echoes plasma mid)
+    fg: "#FFFFFF",
     note: 659.25, // E5
   },
   {
     n: "03",
     title: "Transfer",
     body: "Your playlist lands on the other service in seconds, in the right order, ready to play.",
-    bg: "#FF2E97", // Magenta
-    fg: "#FFFFFF",
+    bg: "#38BDF8", // Bright sky blue (echoes plasma bright tone) — Ink text for contrast
+    fg: "#0B0B0C",
     note: 783.99, // G5
   },
 ];
