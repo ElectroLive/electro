@@ -86,7 +86,7 @@ export default function Home() {
 
           <h1 className="mx-auto mt-6 max-w-4xl text-balance text-3xl font-light leading-[1.15] tracking-tight sm:text-4xl md:text-5xl lg:text-5xl">
             Move your playlists between Spotify and Apple Music in{" "}
-            <span className="electro-laser-text text-4xl font-bold uppercase sm:text-5xl md:text-6xl lg:text-6xl">
+            <span className="electro-laser-text text-3xl font-bold uppercase sm:text-4xl md:text-5xl lg:text-5xl">
               30 seconds
             </span>
             .
