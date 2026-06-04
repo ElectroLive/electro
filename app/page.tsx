@@ -33,11 +33,11 @@ export default function Home() {
       </div>
 
       <header className="mx-auto flex w-full max-w-5xl items-center justify-between px-6 py-5">
-        {/* Wordmark SVG (recolored via CSS mask per brand README; tagline is part of the artwork — do not separate) */}
+        {/* Wordmark SVG, tagline-cropped (viewBox trimmed to y<=54 to drop "100% ELECTRONIC MUSIC") */}
         <span
           role="img"
           aria-label="Electro"
-          className="electro-mark electro-wordmark inline-block h-8 text-electro-snow"
+          className="electro-mark electro-wordmark inline-block h-6 text-electro-snow"
         />
         <span className="text-sm text-muted-foreground">Spotify ↔ Apple Music</span>
       </header>

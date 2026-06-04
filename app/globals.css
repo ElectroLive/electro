@@ -121,7 +121,7 @@
   }
   .electro-wordmark {
     --electro-mask-src: url('/electro-wordmark.svg');
-    aspect-ratio: 494 / 95;
+    aspect-ratio: 494 / 54; /* viewBox cropped to remove "100% ELECTRONIC MUSIC" tagline */
   }
   .electro-e {
     --electro-mask-src: url('/electro-E.svg');
