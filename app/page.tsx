@@ -1,4 +1,5 @@
 import { ShieldCheck, ArrowUpRight } from "lucide-react";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { WaitlistForm } from "@/components/waitlist-form";
 
 // Per-tile palette (Electro brand kit accents). Pale dark default, brand color revealed on hover.
@@ -36,11 +37,14 @@ export default function Home() {
         <span
           role="img"
           aria-label="Electro"
-          className="electro-mark electro-wordmark inline-block h-6 text-electro-ink"
+          className="electro-mark electro-wordmark inline-block h-6 text-electro-ink dark:text-electro-snow"
         />
-        <span className="text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
-          Spotify ↔ Apple Music
-        </span>
+        <div className="flex items-center gap-3 sm:gap-5">
+          <span className="hidden text-[11px] uppercase tracking-[0.22em] text-muted-foreground sm:inline">
+            Spotify ↔ Apple Music
+          </span>
+          <ThemeToggle />
+        </div>
       </header>
 
       <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col px-6 pb-16">

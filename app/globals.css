@@ -97,6 +97,36 @@
   --sidebar-ring: #2f6bff;
 }
 
+/* Dark surface tokens — applied when <html class="dark"> (via theme toggle / system pref) */
+.dark {
+  --background: #0b0b0c;           /* Ink */
+  --foreground: #f4f4f5;           /* Snow */
+  --card: #141519;                 /* elevated panel */
+  --card-foreground: #f4f4f5;
+  --popover: #141519;
+  --popover-foreground: #f4f4f5;
+  --primary: #2f6bff;              /* Electric Blue */
+  --primary-foreground: #ffffff;
+  --secondary: #1c1d23;
+  --secondary-foreground: #f4f4f5;
+  --muted: #1c1d23;
+  --muted-foreground: #888a93;
+  --accent: #1c1d23;
+  --accent-foreground: #f4f4f5;
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: rgba(255, 255, 255, 0.08);
+  --input: rgba(255, 255, 255, 0.12);
+  --ring: #2f6bff;
+  --sidebar: #0b0b0c;
+  --sidebar-foreground: #f4f4f5;
+  --sidebar-primary: #2f6bff;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #1c1d23;
+  --sidebar-accent-foreground: #f4f4f5;
+  --sidebar-border: rgba(255, 255, 255, 0.08);
+  --sidebar-ring: #2f6bff;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
