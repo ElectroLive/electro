@@ -1,16 +1,20 @@
 import type { Metadata } from "next";
-import { Inter, Archivo } from "next/font/google";
+import { Space_Grotesk, Archivo } from "next/font/google";
 import "./globals.css";
 
-// UI/body — Inter as a free stand-in for Neue Haas Grotesk (Karim's secondary)
-const inter = Inter({
-  variable: "--font-inter",
+// UI/body — Space Grotesk per the ELECTRO brand kit. Geometric/technical
+// character that complements the stencil ELECTRO wordmark logo. (Earlier
+// experiment used Inter as a Karim stand-in but it read too generic next
+// to the logo.)
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
-// Display/headlines — Archivo Black as a free stand-in for Titling Gothic Pro
-// (Karim's primary "blocky, strong, bold" display face). Weight 900 = Archivo Black.
+// Display/headlines — Archivo Black for the blocky weight where a hero or
+// tile title needs to feel like a statement.
 const archivo = Archivo({
   variable: "--font-archivo",
   subsets: ["latin"],
@@ -38,7 +42,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${inter.variable} ${archivo.variable} h-full antialiased`}
+      className={`${spaceGrotesk.variable} ${archivo.variable} h-full antialiased`}
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
