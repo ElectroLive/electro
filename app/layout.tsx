@@ -13,12 +13,12 @@ const spaceGrotesk = Space_Grotesk({
   display: "swap",
 });
 
-// Display/headlines — Archivo Black for the blocky weight where a hero or
-// tile title needs to feel like a statement.
+// Display/headlines — Archivo. Loaded with weight 300 too so it can also do
+// the thin hero treatment (not just the heavy 900 tile titles).
 const archivo = Archivo({
   variable: "--font-archivo",
   subsets: ["latin"],
-  weight: ["400", "700", "900"],
+  weight: ["300", "400", "700", "900"],
   display: "swap",
 });
 
