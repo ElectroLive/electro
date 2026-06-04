@@ -38,7 +38,16 @@ const steps = [
 export default function Home() {
   return (
     <div className="relative flex flex-1 flex-col overflow-hidden">
-      {/* Karim-style: pure flat background, no glow */}
+      {/* Plasma background — three blurred brand-color blobs layered behind content.
+          Lower opacity on light mode (faint wash), higher on dark (more vibrant). */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
+      >
+        <div className="absolute -top-1/4 left-[8%] h-[40rem] w-[40rem] rounded-full bg-electro-blue opacity-[0.18] blur-[140px] dark:opacity-[0.32]" />
+        <div className="absolute -top-[10%] right-[5%] h-[32rem] w-[32rem] rounded-full bg-electro-magenta opacity-[0.12] blur-[140px] dark:opacity-[0.22]" />
+        <div className="absolute top-1/3 left-1/3 h-[36rem] w-[36rem] rounded-full bg-electro-teal opacity-[0.14] blur-[140px] dark:opacity-[0.26]" />
+      </div>
 
       <header className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-6">
         <span
