@@ -63,7 +63,7 @@ export default function Home() {
             Early access — launching soon
           </span>
 
-          <h1 className="mt-6 font-display text-balance text-4xl font-black uppercase leading-[0.95] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+          <h1 className="mt-6 font-display text-balance text-3xl font-black uppercase leading-[0.95] tracking-tight sm:text-4xl md:text-5xl lg:text-5xl">
             Move your playlists between Spotify and Apple Music in{" "}
             <span
               className="bg-clip-text text-transparent"
@@ -91,7 +91,7 @@ export default function Home() {
         </section>
 
         {/* Editorial tile grid — 3 steps. Default pale-dark, color-pops on hover. */}
-        <section className="mt-20 sm:mt-28" aria-labelledby="how-it-works">
+        <section className="mt-10 sm:mt-14" aria-labelledby="how-it-works">
           <h2
             id="how-it-works"
             className="mb-6 text-[11px] uppercase tracking-[0.22em] text-muted-foreground"
