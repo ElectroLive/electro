@@ -1,9 +1,12 @@
 import { ShieldCheck, ArrowUpRight } from "lucide-react";
+import { SoundTile } from "@/components/sound-tile";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { WaitlistForm } from "@/components/waitlist-form";
 
-// Per-tile palette (Electro brand kit accents). Pale dark default, brand color revealed on hover.
-// Card text color flips to `fg` on hover for contrast against the bright bg.
+// Per-tile palette (Electro brand kit accents). Pale dark default, brand color
+// revealed on hover. Card text color flips to `fg` on hover for contrast.
+// `note` is the Hz to synthesize on hover — ascending C major triad so hovering
+// CONNECT → MATCH → TRANSFER plays C–E–G.
 const steps = [
   {
     n: "01",
@@ -11,6 +14,7 @@ const steps = [
     body: "Securely link Spotify and Apple Music. No new account, no password — just a one-tap sign-in.",
     bg: "#2F6BFF", // Electric Blue
     fg: "#FFFFFF",
+    note: 523.25, // C5
   },
   {
     n: "02",
@@ -18,6 +22,7 @@ const steps = [
     body: "We match every track by ISRC and smart fuzzy search — even remasters, live takes and features.",
     bg: "#CBF24A", // Lime
     fg: "#0B0B0C",
+    note: 659.25, // E5
   },
   {
     n: "03",
@@ -25,6 +30,7 @@ const steps = [
     body: "Your playlist lands on the other service in seconds, in the right order, ready to play.",
     bg: "#FF2E97", // Magenta
     fg: "#FFFFFF",
+    note: 783.99, // G5
   },
 ];
 
@@ -92,8 +98,9 @@ export default function Home() {
           </h2>
           <ol className="grid gap-3 md:grid-cols-3">
             {steps.map((step) => (
-              <li
+              <SoundTile
                 key={step.title}
+                frequency={step.note}
                 className="group relative isolate overflow-hidden rounded-xl border border-black/[0.08] bg-card transition-[transform,box-shadow] duration-500 hover:-translate-y-1 hover:shadow-[0_24px_60px_-20px_rgba(0,0,0,0.2)]"
                 style={
                   {
@@ -129,7 +136,7 @@ export default function Home() {
                     <ArrowUpRight className="size-3.5" aria-hidden />
                   </span>
                 </div>
-              </li>
+              </SoundTile>
             ))}
           </ol>
         </section>
