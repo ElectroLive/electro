@@ -4,9 +4,10 @@ import { SoundToggle } from "@/components/sound-toggle";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { WaitlistForm } from "@/components/waitlist-form";
 
-// Per-tile palette — op-art trio from the brand kit: Electric Blue + Lime + Orange.
-// Three saturated hues with strong warm/cool jump, max pop against the blue plasma
-// background. No magenta. Each tile picks the fg color with best contrast on its bg.
+// Per-tile palette — three brand jewel tones for a glassmorphism treatment.
+// Sapphire (Electric Blue), Emerald (Teal), Amethyst (Violet). All cool family,
+// no magenta (Violet is distinctly purple). Glass tile tints to ~60% of these
+// on hover so the color reads as "tinted glass" rather than a solid color block.
 // `note` is the Hz to synthesize on hover — ascending C major triad so hovering
 // CONNECT → MATCH → TRANSFER plays C–E–G.
 const steps = [
@@ -14,7 +15,7 @@ const steps = [
     n: "01",
     title: "Connect",
     body: "Securely link Spotify and Apple Music. No new account, no password — just a one-tap sign-in.",
-    bg: "#2F6BFF", // Electric Blue (brand) — anchors against the plasma
+    bg: "#2F6BFF", // Electric Blue / sapphire (brand)
     fg: "#FFFFFF",
     note: 523.25, // C5
   },
@@ -22,7 +23,7 @@ const steps = [
     n: "02",
     title: "Match",
     body: "We match every track by ISRC and smart fuzzy search — even remasters, live takes and features.",
-    bg: "#CBF24A", // Lime (brand) — vivid yellow-green jolt
+    bg: "#21E6C1", // Teal / emerald-cyan (brand)
     fg: "#0B0B0C",
     note: 659.25, // E5
   },
@@ -30,8 +31,8 @@ const steps = [
     n: "03",
     title: "Transfer",
     body: "Your playlist lands on the other service in seconds, in the right order, ready to play.",
-    bg: "#FF8A3D", // Orange (brand) — warm complement to all the blue
-    fg: "#0B0B0C",
+    bg: "#8B5CF6", // Violet / amethyst (brand) — purple, not pink-magenta
+    fg: "#FFFFFF",
     note: 783.99, // G5
   },
 ];
@@ -115,7 +116,7 @@ export default function Home() {
               <SoundTile
                 key={step.title}
                 frequency={step.note}
-                className="group relative isolate overflow-hidden rounded-xl border border-black/[0.08] bg-card transition-[transform,box-shadow] duration-500 hover:-translate-y-1 hover:shadow-[0_24px_60px_-20px_rgba(0,0,0,0.2)]"
+                className="group relative isolate overflow-hidden rounded-2xl border border-black/[0.08] bg-black/[0.03] backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-black/[0.18] hover:shadow-[0_24px_60px_-20px_rgba(0,0,0,0.25)] dark:border-white/[0.12] dark:bg-white/[0.05] dark:hover:border-white/[0.2] dark:hover:shadow-[0_24px_60px_-20px_rgba(0,0,0,0.5)]"
                 style={
                   {
                     "--hover-bg": step.bg,
@@ -123,15 +124,21 @@ export default function Home() {
                   } as React.CSSProperties
                 }
               >
-                {/* Color reveal layer (fades in on hover) */}
+                {/* Tinted-glass color overlay (60% opacity keeps the glass feel) */}
                 <span
                   aria-hidden
-                  className="absolute inset-0 -z-10 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                  className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-60"
                   style={{ backgroundColor: step.bg }}
                 />
 
-                {/* Card content */}
-                <div className="flex h-full flex-col p-6 transition-colors duration-500 group-hover:[color:var(--hover-fg)]">
+                {/* Specular highlight at top edge — glass shine */}
+                <span
+                  aria-hidden
+                  className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent"
+                />
+
+                {/* Card content (z-10 to sit above the tint overlay) */}
+                <div className="relative z-10 flex h-full flex-col p-6 transition-colors duration-500 group-hover:[color:var(--hover-fg)]">
                   <span className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground transition-colors duration-500 group-hover:text-[color:var(--hover-fg)] group-hover:opacity-80">
                     {step.n}
                   </span>
