@@ -65,7 +65,7 @@ export default function Home() {
         <span
           role="img"
           aria-label="Electro"
-          className="electro-mark electro-wordmark inline-block h-6 text-electro-ink dark:text-electro-snow"
+          className="electro-mark electro-wordmark inline-block h-5 text-electro-ink dark:text-electro-snow"
         />
         <div className="flex items-center gap-3 sm:gap-5">
           <span className="hidden text-[11px] uppercase tracking-[0.22em] text-muted-foreground sm:inline">
@@ -84,9 +84,13 @@ export default function Home() {
             Early access — launching soon
           </span>
 
-          <h1 className="mx-auto mt-6 max-w-4xl text-balance text-3xl font-light leading-[1.1] tracking-tight sm:text-4xl md:text-5xl lg:text-5xl">
-            Move your playlists between Spotify and Apple Music in{" "}
-            <span className="electro-laser-text">30 seconds</span>.
+          <h1 className="mx-auto mt-6 max-w-4xl text-balance">
+            <span className="block text-base font-light leading-snug tracking-wide text-muted-foreground sm:text-lg md:text-xl">
+              Move your playlists between Spotify and Apple Music in
+            </span>
+            <span className="electro-laser-text mt-3 block text-5xl font-bold leading-none tracking-tight sm:text-6xl md:text-7xl">
+              30 seconds.
+            </span>
           </h1>
 
           <p className="mx-auto mt-8 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
