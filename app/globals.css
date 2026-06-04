@@ -61,25 +61,25 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-/* Brand-default surface is dark (Ink). shadcn semantic tokens map to brand. */
+/* Brand-default surface is LIGHT (white, Karim-style). shadcn semantic tokens map to brand. */
 :root {
-  --background: #0b0b0c;          /* Ink */
-  --foreground: #f4f4f5;          /* Snow */
-  --card: #141519;                /* elevated panel (per brand references) */
-  --card-foreground: #f4f4f5;
-  --popover: #141519;
-  --popover-foreground: #f4f4f5;
-  --primary: #2f6bff;             /* Electric Blue */
+  --background: #ffffff;           /* white */
+  --foreground: #0b0b0c;           /* Ink — primary text on light */
+  --card: #f5f5f5;                 /* very pale gray — slight elevation from white (Karim's default tile bg) */
+  --card-foreground: #0b0b0c;
+  --popover: #ffffff;
+  --popover-foreground: #0b0b0c;
+  --primary: #2f6bff;              /* Electric Blue */
   --primary-foreground: #ffffff;
-  --secondary: #1c1d23;
-  --secondary-foreground: #f4f4f5;
-  --muted: #1c1d23;
-  --muted-foreground: #888a93;
-  --accent: #1c1d23;
-  --accent-foreground: #f4f4f5;
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: rgba(255, 255, 255, 0.08);
-  --input: rgba(255, 255, 255, 0.12);
+  --secondary: #f4f4f5;            /* Snow */
+  --secondary-foreground: #0b0b0c;
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;     /* mid gray (zinc-500) for de-emphasized text on light */
+  --accent: #f4f4f5;
+  --accent-foreground: #0b0b0c;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: rgba(0, 0, 0, 0.08);
+  --input: rgba(0, 0, 0, 0.12);
   --ring: #2f6bff;
   --chart-1: #2f6bff;
   --chart-2: #21e6c1;
@@ -87,13 +87,13 @@
   --chart-4: #ff2e97;
   --chart-5: #ff8a3d;
   --radius: 0.625rem;
-  --sidebar: #0b0b0c;
-  --sidebar-foreground: #f4f4f5;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #0b0b0c;
   --sidebar-primary: #2f6bff;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #1c1d23;
-  --sidebar-accent-foreground: #f4f4f5;
-  --sidebar-border: rgba(255, 255, 255, 0.08);
+  --sidebar-accent: #f4f4f5;
+  --sidebar-accent-foreground: #0b0b0c;
+  --sidebar-border: rgba(0, 0, 0, 0.08);
   --sidebar-ring: #2f6bff;
 }
 

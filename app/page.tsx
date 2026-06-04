@@ -30,22 +30,13 @@ const steps = [
 export default function Home() {
   return (
     <div className="relative flex flex-1 flex-col overflow-hidden">
-      {/* Brand glow — soft blue → teal radial behind everything */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-0 -top-40 -z-10 flex justify-center"
-      >
-        <div
-          className="h-[34rem] w-[34rem] rounded-full opacity-20 blur-3xl"
-          style={{ backgroundImage: "linear-gradient(110deg, #2F6BFF, #21E6C1)" }}
-        />
-      </div>
+      {/* Karim-style: pure flat background, no glow */}
 
       <header className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-6">
         <span
           role="img"
           aria-label="Electro"
-          className="electro-mark electro-wordmark inline-block h-6 text-electro-snow"
+          className="electro-mark electro-wordmark inline-block h-6 text-electro-ink"
         />
         <span className="text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
           Spotify ↔ Apple Music
@@ -99,7 +90,7 @@ export default function Home() {
             {steps.map((step) => (
               <li
                 key={step.title}
-                className="group relative isolate overflow-hidden rounded-xl border border-white/[0.08] bg-card transition-[transform,box-shadow] duration-500 hover:-translate-y-1 hover:shadow-[0_24px_60px_-20px_rgba(0,0,0,0.6)]"
+                className="group relative isolate overflow-hidden rounded-xl border border-black/[0.08] bg-card transition-[transform,box-shadow] duration-500 hover:-translate-y-1 hover:shadow-[0_24px_60px_-20px_rgba(0,0,0,0.2)]"
                 style={
                   {
                     "--hover-bg": step.bg,
