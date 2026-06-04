@@ -24,9 +24,10 @@ export const metadata: Metadata = {
     "Move your playlists between Spotify and Apple Music in 30 seconds. Accurate, ISRC-based track matching. No signup. Join the early-access list.",
 };
 
-// Inline before-paint script: reads stored theme or system pref, applies `.dark` class
-// to <html> BEFORE first paint so there's no flash of wrong theme on initial load.
-const THEME_INIT_SCRIPT = `(function(){try{var t=localStorage.getItem('theme');var s=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&s)){document.documentElement.classList.add('dark')}}catch(e){}})()`;
+// Inline before-paint script: defaults to dark mode (per user request).
+// Only stays in light if the user explicitly toggled to light (persisted in
+// localStorage). Runs synchronously in <head> to avoid a flash of wrong theme.
+const THEME_INIT_SCRIPT = `(function(){try{if(localStorage.getItem('theme')!=='light'){document.documentElement.classList.add('dark')}}catch(e){document.documentElement.classList.add('dark')}})()`;
 
 export default function RootLayout({
   children,
