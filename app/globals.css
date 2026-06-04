@@ -160,17 +160,21 @@
 
   /* Laser-sweep shimmer for text — adapts the brand "Shimmer" spec
      (originally for the SVG-masked logo) onto text via background-clip:text.
-     Gradient holds the brand blue→teal with a sharp white highlight band that
-     sweeps across; keyframes hold position briefly then sweep fast for a
-     periodic "laser" flash rather than a continuous shimmer. */
+     Gradient holds the brand blue→teal; the highlight band is a chrome-rake
+     (silver gradient with light→peak→dark-core→peak→silver) per the brand
+     metallic spec, so the shine reads as polished silver rather than pure
+     white light. Keyframes hold position briefly then sweep fast for a
+     periodic "laser flash" rather than a continuous shimmer. */
   .electro-laser-text {
     background-image: linear-gradient(
       110deg,
       #2f6bff 0%,
       #2f6bff 40%,
-      rgba(255, 255, 255, 0.6) 47%,
-      #ffffff 50%,
-      rgba(255, 255, 255, 0.6) 53%,
+      #eef2f7 45%,   /* light silver edge */
+      #ffffff 48%,   /* bright peak */
+      #6a7079 50%,   /* dark silver core (the "metal" body) */
+      #ffffff 52%,   /* bright peak */
+      #c4ccd6 55%,   /* mid silver edge */
       #21e6c1 60%,
       #21e6c1 100%
     );
